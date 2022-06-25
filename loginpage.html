@@ -10,7 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <style>
         .container {
-            background: url(home-bg.jpg) no-repeat;
+            background-color: #1d0e15;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -51,7 +51,7 @@
             left: 752px;
             top: 81px;
 
-            background: linear-gradient(109.46deg, rgba(201, 201, 201, 0.8) 1.57%, rgba(196, 196, 196, 0.1) 100%);
+            background: linear-gradient(83.46deg, black 1.57%, rgba(353, 196, 196, 0.1) 100%);
             opacity: 26.5;
             backdrop-filter: blur(60px);
             /* Note: backdrop-filter has minimal browser support */
@@ -65,6 +65,7 @@
             flex-direction: column;
             margin: 8rem 0;
             height: 148px;
+            color: #fff;
         }
 
         .form-label {
@@ -121,6 +122,8 @@
 
             font-family: 'Montserrat';
             font-size: 13px;
+            color: #FFFFFF;
+    
 
         }
 
@@ -135,7 +138,16 @@
             color: #FFFFFF;
         }
     </style>
-
+    <script>
+        function wrong_pass_alert() {
+            if (document.getElementById('username').value != "" &&
+                document.getElementById('password').value != "") {
+                alert("Your response is submitted");
+            } else {
+                alert("Please fill all the fields");
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -146,13 +158,13 @@
 
             <div class="form-group">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" id="name" placeholder="Enter your Username" class="form-input"><br>
-                <label for="username" class="form-label">Password</label>
-                <input type="text" id="name" placeholder="Enter your Password" class="form-input">
+                <input type="text" id="username" placeholder="Enter your Username" class="form-input"><br>
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" placeholder="Enter your Password" class="form-input">
 
 
             </div>
-            <button class="btn">Login</button>
+            <button class="btn" onclick="wrong_pass_alert()">Login</button>
             <p class="signup">New to Livfit? <a href="signup.html">signup.</a> </p>
         </div>
 
@@ -160,3 +172,6 @@
 </body>
 
 </html>
+
+
+
